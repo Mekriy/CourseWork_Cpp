@@ -41,13 +41,3 @@ Teacher Teacher::operator=(const Teacher& tch) {
 	SetPosition(tch.Position);
 	return *this;
 }
-//
-//std::istream& operator>>(std::istream& is, Teacher& tch)
-//{
-//	
-//}
-//
-//std::ostream& operator<<(std::ostream& os, const Teacher& tch)
-//{
-//	
-//}

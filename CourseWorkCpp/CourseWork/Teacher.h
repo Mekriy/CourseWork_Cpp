@@ -18,9 +18,9 @@ public:
 
 	friend std::istream& operator>>(std::istream& is, Teacher& tch){
 		std::cout << "Enter surname and initials of the teacher:\n";
-		is >> gets_s(tch.SurnameAndInitials, 200);
+		is >> tch.SurnameAndInitials;
 		std::cout << "Enter position of the teacher:\n";
-		is >> gets_s(tch.Position, 200);
+		is >> tch.Position;
 		return is;
 	}
 	friend std::ostream& operator<<(std::ostream& os, const Teacher& tch){
