@@ -1,4 +1,5 @@
 #pragma once
+#include <iostream>
 class Teacher
 {
 	char* SurnameAndInitials, *Position;
@@ -11,5 +12,19 @@ public:
 
 	char* GetSurnameAndInitials();
 	char* GetPosition();
-};
 
+	Teacher operator()(const char* NewSurnameAndInitials, const char* NewPosition);
+	Teacher operator=(const Teacher& st);
+
+	friend std::istream& operator>>(std::istream& is, Teacher& tch){
+		std::cout << "Enter surname and initials of the teacher:\n";
+		is >> gets_s(tch.SurnameAndInitials, 200);
+		std::cout << "Enter position of the teacher:\n";
+		is >> gets_s(tch.Position, 200);
+		return is;
+	}
+	friend std::ostream& operator<<(std::ostream& os, const Teacher& tch){
+		os << "Surname and initials of the teacher: " << tch.SurnameAndInitials << "\nPosition of the teacher: " << tch.Position << std::endl;
+		return os;
+	}
+};
