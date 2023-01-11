@@ -18,13 +18,15 @@ public:
 
 	friend std::istream& operator>>(std::istream& is, Teacher& tch){
 		std::cout << "Enter surname and initials of the teacher:\n";
-		is >> tch.SurnameAndInitials;
+		is.getline(tch.SurnameAndInitials, 256);
 		std::cout << "Enter position of the teacher:\n";
-		is >> tch.Position;
+		is.getline(tch.Position, 256);
 		return is;
 	}
 	friend std::ostream& operator<<(std::ostream& os, const Teacher& tch){
 		os << "Surname and initials of the teacher: " << tch.SurnameAndInitials << "\nPosition of the teacher: " << tch.Position << std::endl;
 		return os;
 	}
+
+	virtual char* ShowCurrentName();
 };

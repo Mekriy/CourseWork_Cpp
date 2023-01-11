@@ -20,4 +20,6 @@ public:
 
 	friend std::istream& operator>>(std::istream& is, Student& st);
 	friend std::ostream& operator<<(std::ostream& os, const Student& st);
+
+	virtual char* ShowCurrentName();
 };

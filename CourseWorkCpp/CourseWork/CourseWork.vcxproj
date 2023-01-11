@@ -130,12 +130,14 @@
     <ClInclude Include="Lesson.h" />
     <ClInclude Include="Student.h" />
     <ClInclude Include="Teacher.h" />
+    <ClInclude Include="Timetable.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="CourseWorkMain.cpp" />
     <ClCompile Include="Lesson.cpp" />
     <ClCompile Include="Student.cpp" />
     <ClCompile Include="Teacher.cpp" />
+    <ClCompile Include="Timetable.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

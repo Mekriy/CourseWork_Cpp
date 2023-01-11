@@ -55,11 +55,11 @@ Student Student::operator=(const Student& st) {
 std::istream& operator>>(std::istream& is, Student& st)
 {
 	std::cout << "Enter name of the group:\n";
-	is >> st.Group;
+	is.getline(st.Group, 256);
 	std::cout << "Enter Surname of the student:\n";
-	is >> st.Surname;
+	is.getline(st.Surname, 256);
 	std::cout << "Enter Mark of the student:\n";
-	is >> st.Mark;
+	is.getline(st.Mark, 256);
 	return is;
 }
 
@@ -67,4 +67,9 @@ std::ostream& operator<<(std::ostream& os, const Student& st)
 {
 	os << "Name of the group: " << st.Group << "\nSurname of the student: " << st.Surname << "\nMark of the student: " << st.Mark << std::endl;
 	return os;
+}
+
+char* Student::ShowCurrentName() {
+	std::cout << "Current name of the Student:\n";
+	return Surname;
 }

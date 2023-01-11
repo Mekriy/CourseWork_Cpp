@@ -48,3 +48,8 @@ char* Lesson::GetTime() {
 char* Lesson::GetPlace() {
 	return Place;
 }
+
+char* Lesson::ShowCurrentName() {
+	std::cout << "Current name of the lesson:\n";
+	return Discipline;
+}

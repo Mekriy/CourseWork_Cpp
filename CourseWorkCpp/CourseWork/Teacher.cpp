@@ -41,3 +41,8 @@ Teacher Teacher::operator=(const Teacher& tch) {
 	SetPosition(tch.Position);
 	return *this;
 }
+
+char* Teacher::ShowCurrentName() {
+	std::cout << "Current name of the teacher:\n";
+	return SurnameAndInitials;
+}
