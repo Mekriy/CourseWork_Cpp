@@ -1,5 +1,6 @@
 #include "Lesson.h"
 #include "Timetable.h"
+//#include "Iterator.h"
 #include <iostream>
 
 using std::cout;
@@ -21,12 +22,14 @@ int main() {
 	cin >> les;
 	Student* stu3 = &les;
 	cout << "Here #5:\n" << stu3->ShowCurrentName() << "\n";*/
-
-	cout << "Here #6:\n";
+	/*cout << "Here #6:\n";
 	Timetable tmtb;
 	tmtb.FillLessonsIntoTimetable();
 	cout << "Here #7:\n";
 	tmtb.ShowTimetable();
 	cout << "Here #8:\n";
-	tmtb.SaveTimetableIntoFile();
+	tmtb.SaveTimetableIntoFile();*/
+	Timetable tmtb;
+	tmtb.FillLessonsIntoTimetable();
+	tmtb.ShowTimetable();
 }

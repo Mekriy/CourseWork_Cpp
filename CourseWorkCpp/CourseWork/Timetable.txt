@@ -1,15 +1,15 @@
-Discipline of the lesson dsa
-Type of the lesson: dsa
-Date of the lesson: dsa
-Time of the lesson: dsa
-Place of the lesson: ads
-Discipline of the lesson sd
-Type of the lesson: a
-Date of the lesson: sad
-Time of the lesson: asd
-Place of the lesson: sad
-Discipline of the lesson das
-Type of the lesson: dsa
-Date of the lesson: das
-Time of the lesson: das
-Place of the lesson: da
+Discipline of the lesson hello avocado
+Type of the lesson: asdads1
+Date of the lesson: asdadsda1
+Time of the lesson: asdasddas1
+Place of the lesson: asdsadads1
+Discipline of the lesson hello avoccado
+Type of the lesson: asddasas2
+Date of the lesson: asdasdads2
+Time of the lesson: saddasdsa2
+Place of the lesson: asdsaddsa2
+Discipline of the lesson hello avocaddo
+Type of the lesson: adssadads3
+Date of the lesson: adsdads3
+Time of the lesson: adsdaads3
+Place of the lesson: adsdasads3
