@@ -6,9 +6,14 @@ class Timetable
 	Lesson* AllTheLessons;
 
 public:
-	class Iterator;
 	Timetable();
 	~Timetable();
+	
+	void FillLessonsIntoTimetable();
+	void ShowTimetable();
+	void ShowTimetable(int value);
+	void SaveTimetableIntoFile();
+
 	Lesson& operator[](const int& value) {
 		if (value > 0 && value < NumberOfLessons) {
 			return AllTheLessons[value];
@@ -16,30 +21,30 @@ public:
 		return AllTheLessons[0];
 	}
 
-	Iterator begin() { return AllTheLessons; }
-	Iterator end() { return AllTheLessons + NumberOfLessons; }
-
-	int getNumberOfLessons();
-	void FillLessonsIntoTimetable();
-	void ShowTimetable();
-	void SaveTimetableIntoFile();
-
+	class Iterator;
+	Iterator BeginOfTimetable() { return AllTheLessons; }
+	Iterator EndOfTimetable() { return AllTheLessons + NumberOfLessons; }
 	class Iterator {
 		Lesson* CurrentLesson;
 	public:
 		Iterator(Lesson* first) : CurrentLesson(first){}
 
-		Lesson& operator+(int value) { return *(CurrentLesson + value); }
-		Lesson& operator-(int value) { return *(CurrentLesson - value); }
+		Lesson& operator* () { return *CurrentLesson; } // using
 
-		Lesson& operator++(int) { return *CurrentLesson++; }
-		Lesson& operator--(int) { return *CurrentLesson--; }
-		Lesson& operator++() { return *++CurrentLesson; }
-		Lesson& operator--() { return *--CurrentLesson; }
+		Lesson& operator+=(int value) { return *(CurrentLesson += value); } // using
+		Lesson& operator++(int) { return *CurrentLesson++; } // using
 
-		bool operator!= (const Iterator& it) { return CurrentLesson != it.CurrentLesson; }
-		bool operator==(const Iterator& it) { return CurrentLesson == it.CurrentLesson; }
-		Lesson& operator* () { return *CurrentLesson; }
+		bool operator!= (const Iterator& it) { return CurrentLesson != it.CurrentLesson; } // using
+		bool operator>= (const Iterator& it) { return CurrentLesson >= it.CurrentLesson; } // using
+		bool operator<= (const Iterator& it) { return CurrentLesson <= it.CurrentLesson; } // using
 	};
 };
 
+//unusable operator overloads
+//Lesson& operator-=(int value) { return *(CurrentLesson -= value); }
+//Lesson& operator--(int) { return *CurrentLesson--; }
+//Lesson& operator++() { return *++CurrentLesson; }
+//Lesson& operator--() { return *--CurrentLesson; }
+//bool operator== (const Iterator& it) { return CurrentLesson == it.CurrentLesson; }
+//bool operator> (const Iterator& it) { return CurrentLesson > it.CurrentLesson; }
+//bool operator< (const Iterator& it) { return CurrentLesson < it.CurrentLesson; }

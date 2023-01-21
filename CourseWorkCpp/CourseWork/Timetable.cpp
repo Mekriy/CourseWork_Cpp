@@ -12,10 +12,6 @@ Timetable::Timetable() {
 
 Timetable::~Timetable() {}
 
-int Timetable::getNumberOfLessons() {
-	return NumberOfLessons;
-}
-
 void Timetable::FillLessonsIntoTimetable() {	
 	for (int i = 0; i < NumberOfLessons; i++) {
 		std::cin >> AllTheLessons[i];
@@ -23,18 +19,24 @@ void Timetable::FillLessonsIntoTimetable() {
 }
 
 void Timetable::ShowTimetable() {
-	auto it = Timetable::Iterator(begin());
-	while (it != end()) {
+	for (Iterator it = Timetable::Iterator(BeginOfTimetable()); it != EndOfTimetable(); it++) {
 		std::cout << *it << std::endl;
-		it++;
 	}
+}
+void Timetable::ShowTimetable(int value) {
+	Iterator it = Timetable::Iterator(BeginOfTimetable());
+	it += value;
+	if (it <= EndOfTimetable())
+		std::cout << *it << std::endl;
+	else
+		std::cout << "Invalid number!\n";
 }
 
 void Timetable::SaveTimetableIntoFile() {
 	std::ofstream IntoFile;
 	IntoFile.open("Timetable.txt", std::ofstream::trunc);
-	for (int i = 0; i < NumberOfLessons; i++) {
-		IntoFile << AllTheLessons[i];
+	for (Iterator it = Timetable::Iterator(BeginOfTimetable()); it != EndOfTimetable(); it++) {
+		IntoFile << *it;
 	}
 	IntoFile.close();
 }
