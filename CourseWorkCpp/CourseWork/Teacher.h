@@ -17,6 +17,7 @@ public:
 	Teacher operator=(const Teacher& st);
 
 	friend std::istream& operator>>(std::istream& is, Teacher& tch){
+		is.ignore();
 		std::cout << "Enter surname and initials of the teacher:\n";
 		is.getline(tch.SurnameAndInitials, 256);
 		std::cout << "Enter position of the teacher:\n";

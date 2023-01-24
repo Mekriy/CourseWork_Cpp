@@ -9,6 +9,7 @@ public:
 	Timetable();
 	~Timetable();
 	
+	void SetSizeOfTimetable(int value);
 	void FillLessonsIntoTimetable();
 	void ShowTimetable();
 	void ShowTimetable(int value);
@@ -39,12 +40,3 @@ public:
 		bool operator<= (const Iterator& it) { return CurrentLesson <= it.CurrentLesson; } // using
 	};
 };
-
-//unusable operator overloads
-//Lesson& operator-=(int value) { return *(CurrentLesson -= value); }
-//Lesson& operator--(int) { return *CurrentLesson--; }
-//Lesson& operator++() { return *++CurrentLesson; }
-//Lesson& operator--() { return *--CurrentLesson; }
-//bool operator== (const Iterator& it) { return CurrentLesson == it.CurrentLesson; }
-//bool operator> (const Iterator& it) { return CurrentLesson > it.CurrentLesson; }
-//bool operator< (const Iterator& it) { return CurrentLesson < it.CurrentLesson; }

@@ -4,15 +4,18 @@
 #include <Windows.h>
 
 Timetable::Timetable() {
-	std::cout << "Type how much lessons in the timetable:\n";
-	std::cin >> NumberOfLessons;
-	std::cin.ignore();
-	AllTheLessons = new Lesson[NumberOfLessons];
+	AllTheLessons = new Lesson[0];
 }
 
 Timetable::~Timetable() {}
 
-void Timetable::FillLessonsIntoTimetable() {	
+void Timetable::SetSizeOfTimetable(int value) {
+	NumberOfLessons = value;
+	AllTheLessons = new Lesson[NumberOfLessons];
+}
+
+void Timetable::FillLessonsIntoTimetable() {
+	std::cin.ignore();
 	for (int i = 0; i < NumberOfLessons; i++) {
 		std::cin >> AllTheLessons[i];
 	}

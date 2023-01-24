@@ -5,59 +5,120 @@
 using std::cout;
 using std::cin;
 
-int main() {
-	Student stu, stu2;
-	Teacher tich;
-	Lesson les;
-	cout << "Here #1: " << stu << "\n" << tich << "\n";
-	stu("KN-22", "Pasternak", "100");
-	tich("Volynets E.O.", "Lecturer");
-	cout << "Here #2: " << stu << "\n" << tich << "\n";
+Student stud;
+Teacher tch;
+Timetable tmtb;
 
-	cin >> stu2;
-	cout << "Here #3: " << stu2 << "\n";
-	stu = stu2;
-	cout << "Here #4: " << stu << "\n";
-	cin >> les;
-	Student* stu3 = &les;
-	cout << "Here #5:\n" << stu3->ShowCurrentName() << "\n";
-	cout << "Here #6:\n";
-	
-	Timetable tmtb;
-	tmtb.FillLessonsIntoTimetable();
-	cout << "Here #7:\n";
-	tmtb.ShowTimetable();
-	cout << "Here #8:\n";
-	tmtb.SaveTimetableIntoFile();
-	cout << "Here #9:\n";
-	int value;
-	cout << "Your value:\n";
-	cin >> value;
-	tmtb.ShowTimetable(value);
-	cout << "All Timetable:\n";
-	tmtb.ShowTimetable();
+void Menu(Student& stud);
+void Menu(Teacher& tch);
+void Menu(Timetable& tmtb);
+
+int main() {
+	cout << "Choose what you would like to proceed:\n1. Options about student\n2. Options about teacher\n3. Options about timetable\n";
+	unsigned int choice;
+	cin >> choice;
+	switch (choice) {
+	case 1: {
+		Menu(stud);
+	}
+	case 2: {
+		Menu(tch);
+	}
+	case 3: {
+		Menu(tmtb);
+	}
+	default: {
+		cout << "Invalid input.\n";
+		main();
+		break;
+	}
+	}
 }
 
-/*
-	About all this operator overloads in Timetable.h:
-	Unuseable operators are commented in Timetable.h
+void Menu(Student& stud) {
+	cout << "What do you want to do:\n1. Write information about student\n2. Show information about student\n3. Change information\n";
+	unsigned int choice;
+	cin >> choice;
+	switch (choice) {
+	case 1: {
+		cin >> stud;
+		main();
+	}
+	case 2: {
+		cout << "Your information about student:\n";
+		cout << stud;
+		main();
+	}
+	case 3: { // Make edit option flexible
+		cin >> stud;
+		main();
+	}
+	}
+}
 
-	1. I need to make a Menu (->) where I can freely use iterator with this overloads.
-	->(Or not? Yeah probably need to. Like use everything I tested but in a Menu)
+void Menu(Teacher & tch) {
+	cout << "What do you want to do:\n1. Write information about teacher\n2. Show information about teacher\n3. Change something\n";
+	unsigned int choice;
+	cin >> choice;
+	switch (choice) {
+	case 1: {
+		cin >> tch;
+		main();
+		break;
+	}
+	case 2: {
+		cout << "Your information about teacher:\n";
+		cout << tch;
+		main();
+		break;
+	}
+	case 3: { // Make edit option flexible
+		cin >> tch;
+		main();
+		break;
+	}
+	default: {
+		cout << "Invalid input.\n";
+		main();
+		break;
+	}
+	}
+}
 
-	2. I mean "+" and "-" are not quite good here, probably replace with "=" so I could type exactly what lesson I want. (<-)
-	 <- (So, basically "=" can't be used cuz it needs to create an iterator object. 
-	 About "+" and "-": (a) + works good, (b) - ain't working at all. 
-	 (b) Why? Simple. When iterator object is created it has 1 object of an array of objects
-	 So that's why - won't work, it substracting to negative numbers which are not exists.
-	 (a) "+" adds to this first object, no remembering last option at all. Maybe a problem, maybe not. Idk.)
-
-	3. Next, do I really need "++" prefix and postfix? Probably use only second one.
-	 Haven't checked yet.
-
-	4. Also I dont need "==" so just delete this.
-	 Haven't checked yet.
-
-	5. Is it good to use this iterator class in Timetable class? I should try to separate him from timetable.
-	 Haven't checked yet.
-*/
+void Menu(Timetable& tmtb){
+	cout << "What do you want to do:\n1. Fill up timetable\n2. Show timetable\n3. Change something\n4. Save into file\n";
+	unsigned int choice;
+	cin >> choice;
+	switch (choice) {
+	case 1: {
+		cout << "Type how many lessons will be:\n";
+		cin >> choice;
+		tmtb.SetSizeOfTimetable(choice);
+		tmtb.FillLessonsIntoTimetable();
+		main();
+		break;
+	}
+	case 2: {
+		cout << "Your timetable for today:\n";
+		tmtb.ShowTimetable();
+		main();
+		break;
+	}
+	case 3: { // flexible edit
+		tmtb.FillLessonsIntoTimetable();
+		main();
+		break;
+	}
+	case 4: {
+		tmtb.SaveTimetableIntoFile();
+		cout << "Succesfully saved!\n";
+		main();
+		break;
+	}
+	default: {
+		cout << "Invalid input!\n";
+		main();
+		break;
+	}
+	}
+}

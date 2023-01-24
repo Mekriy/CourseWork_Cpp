@@ -1,8 +1,5 @@
 ﻿  CourseWorkMain.cpp
 C:\NLTU\My nltu reports\The Second Year\OOP_CPP\Курсова робота\CourseWork\CourseWorkCpp\CourseWork\Lesson.h(2,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
 C:\NLTU\My nltu reports\The Second Year\OOP_CPP\Курсова робота\CourseWork\CourseWorkCpp\CourseWork\Lesson.h(3,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
-  Timetable.cpp
-C:\NLTU\My nltu reports\The Second Year\OOP_CPP\Курсова робота\CourseWork\CourseWorkCpp\CourseWork\Lesson.h(2,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
-C:\NLTU\My nltu reports\The Second Year\OOP_CPP\Курсова робота\CourseWork\CourseWorkCpp\CourseWork\Lesson.h(3,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
-  Generating Code...
+C:\NLTU\My nltu reports\The Second Year\OOP_CPP\Курсова робота\CourseWork\CourseWorkCpp\CourseWork\CourseWorkMain.cpp(36): warning C4717: 'main': recursive on all control paths, function will cause runtime stack overflow
   CourseWork.vcxproj -> C:\NLTU\My nltu reports\The Second Year\OOP_CPP\Курсова робота\CourseWork\CourseWorkCpp\x64\Debug\CourseWork.exe

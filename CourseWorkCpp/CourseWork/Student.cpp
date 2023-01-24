@@ -54,6 +54,7 @@ Student Student::operator=(const Student& st) {
 
 std::istream& operator>>(std::istream& is, Student& st)
 {
+	is.ignore();
 	std::cout << "Enter name of the group:\n";
 	is.getline(st.Group, 256);
 	std::cout << "Enter Surname of the student:\n";

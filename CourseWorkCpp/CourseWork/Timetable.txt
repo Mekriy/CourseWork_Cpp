@@ -1,15 +1,15 @@
-Discipline of the lesson OOP C++
-Type of the lesson: Labwork
-Date of the lesson: 3.02.2023
-Time of the lesson: 9:00
-Place of the lesson: NLTU admin corpus
 Discipline of the lesson OOP CPP
+Type of the lesson: lecture
+Date of the lesson: 23.02.2023
+Time of the lesson: 12:30
+Place of the lesson: nltu admin corpus cab 6
+Discipline of the lesson OOP C++
+Type of the lesson: labwork
+Date of the lesson: 23.02.2023
+Time of the lesson: 14:15
+Place of the lesson: nltu admin corpus cab 14
+Discipline of the lesson OOP Java
 Type of the lesson: Lecture
-Date of the lesson: 03.02.2023
-Time of the lesson: 10:45
-Place of the lesson: NLTU admin corpus cab 5
-Discipline of the lesson MMDO
-Type of the lesson: Lecture
-Date of the lesson: 03.02.2023
-Time of the lesson: 12:00
-Place of the lesson: NLTU admin corpus cab 6
+Date of the lesson: 23.03.2023
+Time of the lesson: 16:00
+Place of the lesson: nltu admin corpus cab 5
