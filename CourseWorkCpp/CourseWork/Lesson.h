@@ -22,6 +22,7 @@ public:
 	char* GetPlace();
 
 	friend std::istream& operator>>(std::istream& is, Lesson& ls) {
+		is.ignore();
 		std::cout << "Enter discipline of the lesson:\n";
 		is.getline(ls.Discipline, 256);
 		std::cout << "Enter type of the lesson:\n";
